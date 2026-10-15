@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "mike-is-hiring": {
+      "type": "streamable-http",
+      "url": "https://jobs.mikeishiring.com/api/public/v1/mcp?surface=market",
+      "extensions": { "com.openai": { "auth": { "type": "none" } } }
+    }
+  }
+}

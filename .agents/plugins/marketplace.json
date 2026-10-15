@@ -1,0 +1,12 @@
+{
+  "name": "mike-is-hiring",
+  "interface": { "displayName": "Mike is Hiring" },
+  "plugins": [
+    {
+      "name": "mike-is-hiring",
+      "source": { "source": "local", "path": "./plugins/mike-is-hiring" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

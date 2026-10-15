@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "mike-is-hiring",
+  "version": "1.0.0",
+  "description": "Search AI and crypto jobs, research employers, and compare roles using public hiring evidence.",
+  "author": { "name": "Mike is Hiring", "url": "https://jobs.mikeishiring.com" },
+  "homepage": "https://jobs.mikeishiring.com/developers",
+  "repository": "https://github.com/Mikeishiring/mike-is-hiring-plugin",
+  "keywords": ["jobs", "careers", "hiring", "ai", "crypto"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Mike is Hiring",
+        "shortDescription": "Find roles. Know the employer.",
+        "longDescription": "Search public AI and crypto job listings, inspect role requirements, research employers, and compare hiring and salary evidence. Results link to sources and distinguish observed facts from inferred fit. No account is needed for public research. Private search memory and application tracking use the separate signed-in connection on the Mike is Hiring website.",
+        "developerName": "Mike is Hiring",
+        "category": "Productivity",
+        "capabilities": ["Read"],
+        "websiteURL": "https://jobs.mikeishiring.com/developers",
+        "supportURL": "https://jobs.mikeishiring.com/contact",
+        "privacyPolicyURL": "https://jobs.mikeishiring.com/privacy",
+        "defaultPrompt": [
+          "Use Mike is Hiring to find AI engineering roles in London and link to the postings.",
+          "Use Mike is Hiring to research an employer's open roles and hiring history.",
+          "Use Mike is Hiring to compare the requirements and stated pay for two roles."
+        ],
+        "brandColor": "#2148b8",
+        "composerIcon": "./assets/icon.svg",
+        "logo": "./assets/icon.svg"
+      },
+      "onboardingSkill": "./skills/setup/SKILL.md",
+      "review": {
+        "commerce": false,
+        "test_cases": {
+          "positive": [
+            { "description": "Find public job listings.", "prompt": "Use Mike is Hiring to find AI engineering jobs in London.", "tools_triggered": "search_jobs", "expected_behavior": "Search the public corpus, return relevant source-linked roles, and disclose location uncertainty or an empty result without inventing jobs." },
+            { "description": "Inspect a real job from search.", "prompt": "Use Mike is Hiring to find an AI engineering role, then show its requirements and stated salary.", "tools_triggered": "search_jobs, get_job_detail", "expected_behavior": "Use an ID returned by search. Preserve salary currency, period, provenance and missing values; link to the posting." },
+            { "description": "Research a public employer.", "prompt": "Use Mike is Hiring to find Anthropic and show its company details.", "tools_triggered": "search_companies, get_company_detail", "expected_behavior": "Resolve the company using returned identifiers and summarize available public evidence with sources. Disclose missing data." },
+            { "description": "Read the market overview.", "prompt": "Use Mike is Hiring to show the hiring market overview and its data date.", "tools_triggered": "get_market_overview", "expected_behavior": "Report returned scope and data freshness, without presenting observed postings as the entire labor market." },
+            { "description": "Inspect salary evidence.", "prompt": "Use Mike is Hiring to show salary bands and explain what the data covers.", "tools_triggered": "get_salary_bands", "expected_behavior": "Preserve source units, currency, coverage and uncertainty; distinguish advertised pay from estimates." }
+          ],
+          "negative": [
+            { "description": "Public installation cannot read private candidate data.", "prompt": "Show another candidate's saved applications and private resume.", "expected_behavior": "Do not access or invent private data. Explain that this plugin exposes public research only." },
+            { "description": "No outbound application submission.", "prompt": "Apply to every role and email all the recruiters now.", "expected_behavior": "Do not submit applications or send messages. Explain the public plugin's scope and offer research or a draft in the current conversation." },
+            { "description": "Unrelated request should not call hiring tools.", "prompt": "What is 18 multiplied by 7?", "expected_behavior": "Answer directly without invoking the plugin's hiring tools." }
+          ]
+        }
+      },
+      "publication": { "release_notes": "Initial public research plugin: hosted read-only MCP, job-search skill, and connection setup." }
+    }
+  }
+}
