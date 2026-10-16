@@ -1,0 +1,16 @@
+{
+  "name": "mike-is-hiring",
+  "version": "1.0.1",
+  "description": "Search AI and crypto jobs, research employers, and compare roles using public hiring evidence.",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Mike is Hiring",
+    "shortDescription": "Find roles. Know the employer.",
+    "category": "Productivity",
+    "capabilities": ["Read"],
+    "websiteURL": "https://jobs.mikeishiring.com/developers",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg"
+  }
+}

@@ -8,10 +8,11 @@ With a current Codex CLI:
 
 ```sh
 codex plugin marketplace add Mikeishiring/mike-is-hiring-plugin
+codex plugin marketplace upgrade mike-is-hiring
 codex plugin add mike-is-hiring@mike-is-hiring
 ```
 
-Start a new Codex conversation after installation. Run the plugin's setup to check the public connection, or ask:
+Restart Codex after installation, then start a new conversation. Run the plugin's setup to check the public connection, or ask:
 
 > Use Mike is Hiring to find AI engineering roles in London and link to the postings.
 
@@ -23,7 +24,7 @@ If your CLI does not recognize `plugin`, update Codex from its official source. 
 
 The public plugin reads jobs, company and market evidence. It does not read private candidate records, submit applications or send messages. Private search memory uses the separate [signed-in setup](https://jobs.mikeishiring.com/app/setup?restart=1&intent=connection&client=codex). Do not paste credentials into chat or overwrite an existing private MCP connection.
 
-The ZIP in Releases is the portable plugin package. The repository includes the marketplace catalog used by the install commands. Report install problems through [support](https://jobs.mikeishiring.com/contact). [Privacy](https://jobs.mikeishiring.com/privacy).
+The ZIP includes the portable package and explicit compatibility manifests for Codex 0.144.1. Both connect to the same unauthenticated public endpoint as `mike-is-hiring-public`; an existing private `mike-is-hiring` connection stays separate. The repository includes the marketplace catalog used by the install commands. Report install problems through [support](https://jobs.mikeishiring.com/contact). [Privacy](https://jobs.mikeishiring.com/privacy).
 
 ## Update or remove
 
@@ -33,3 +34,5 @@ codex plugin add mike-is-hiring@mike-is-hiring
 ```
 
 Use Codex's Plugins settings to disable or uninstall Mike is Hiring.
+
+If only the skill loads, public research is not connected. Update and reinstall using the commands above, then restart Codex. If your host still cannot load bundled servers, use the website's manual MCP setup with the distinct `mike-is-hiring-public` server name. Never overwrite a private connection or supply an API key for public research.

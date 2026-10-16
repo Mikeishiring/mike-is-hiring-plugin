@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mike-is-hiring",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Search AI and crypto jobs, research employers, and compare roles using public hiring evidence.",
   "author": { "name": "Mike is Hiring", "url": "https://jobs.mikeishiring.com" },
   "homepage": "https://jobs.mikeishiring.com/developers",

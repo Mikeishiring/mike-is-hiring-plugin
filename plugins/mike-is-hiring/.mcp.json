@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "mike-is-hiring-public": {
+      "url": "https://jobs.mikeishiring.com/api/public/v1/mcp?surface=market"
+    }
+  }
+}

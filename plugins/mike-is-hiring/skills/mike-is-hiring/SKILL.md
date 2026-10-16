@@ -5,7 +5,7 @@ description: Search Mike is Hiring's public AI and crypto job listings, research
 
 # Mike is Hiring
 
-Use the bundled `mike-is-hiring` MCP connection. Its public corpus includes AI and crypto. Follow the discovered tool schemas rather than guessing argument names.
+Use the bundled `mike-is-hiring-public` MCP connection. Its public corpus includes AI and crypto. Follow the discovered tool schemas rather than guessing argument names. If only a separate `mike-is-hiring` candidate connection is available, use the setup skill; do not substitute that connection or read its private context for a public search.
 
 For role searches, use `search_jobs`, then `get_job_detail` for roles the user wants to inspect. For employer research, resolve names with `search_companies` before using company detail, hiring history or comparison tools. Use salary bands and market tools when the question is about aggregate evidence.
 
