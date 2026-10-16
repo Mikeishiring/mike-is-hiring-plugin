@@ -1,6 +1,6 @@
 {
   "name": "mike-is-hiring",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Search AI and crypto jobs, research employers, and compare roles using public hiring evidence.",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",

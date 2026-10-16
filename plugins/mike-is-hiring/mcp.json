@@ -3,8 +3,7 @@
   "mcpServers": {
     "mike-is-hiring-public": {
       "type": "streamable-http",
-      "url": "https://jobs.mikeishiring.com/api/public/v1/mcp?surface=market",
-      "extensions": { "com.openai": { "auth": { "type": "none" } } }
+      "url": "https://jobs.mikeishiring.com/api/public/v1/mcp?surface=market"
     }
   }
 }
